@@ -43,14 +43,6 @@ git push -u origin main
 
 如需修改时间，编辑 `.github/workflows/daily-trending.yml` 中的 `cron` 表达式。
 
-## 安全提醒
-
-**你的企业微信 Webhook Key 已经在之前的对话中暴露**。建议：
-
-1. 在企业微信群中删除当前机器人
-2. 重新添加一个新的群机器人
-3. 使用新的 Webhook 地址配置 GitHub Secret
-
 ## 文件说明
 
 | 文件 | 说明 |
