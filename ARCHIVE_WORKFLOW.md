@@ -10,24 +10,26 @@
 2. 检查该目录下 `docs/` 是否有修改或未跟踪的文件
 3. 如有变更，询问用户是否归档到本仓库
 
-## 归档路径映射
+## 归档规则
 
-自动根据来源项目的 **git 仓库名** 创建对应目录，目录不存在则自动创建。
+所有文档直接放在 `docs/` 根目录下，**不按项目创建子目录**。
 
-| 来源项目示例 | 归档目标路径 |
-|-------------|-------------|
-| `/home/xuwenjie/Documents/uco-starrocks` → 仓库名 `uco-starrocks` | `docs/uco-starrocks/` |
-| `/home/xuwenjie/Documents/uco-dbt` → 仓库名 `uco-dbt` | `docs/uco-dbt/` |
-| `/home/xuwenjie/Documents/my-project` → 仓库名 `my-project` | `docs/my-project/` |
+文件名格式：`{repo-name}-{original-name}.md`
+
+| 来源项目示例 | 原文档名 | 归档后文件名 |
+|-------------|----------|-------------|
+| `uco-starrocks` | `starrocks-deployment-notes.md` | `uco-starrocks-starrocks-deployment-notes.md` |
+| `uco-dbt` | `dbt-modeling-guide.md` | `uco-dbt-dbt-modeling-guide.md` |
+| `my-project` | `setup.md` | `my-project-setup.md` |
 
 **规则**：
-1. 读取当前工作目录的 git remote origin URL，提取仓库名作为分类名
-2. 目录不存在时自动 `mkdir -p docs/<repo-name>/`
-3. 同一项目的所有文档集中在一个目录下，不分散到 others
+1. 读取当前工作目录的 git remote origin URL，提取仓库名作为文件名前缀
+2. 文档直接放入 `docs/` 根目录，不创建子文件夹
+3. 同一项目的文档通过文件名前缀区分
 
 ## 归档步骤
 
-1. 复制变更的文档文件到对应分类目录
+1. 复制变更的文档文件到 `docs/` 根目录，按规则重命名
 2. 更新 `docs/README.md` 索引
 3. `git add && git commit && git push`
 
