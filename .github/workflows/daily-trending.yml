@@ -1,0 +1,25 @@
+name: Daily GitHub Trending
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # UTC 01:00 = 北京时间 09:00
+  workflow_dispatch:      # 允许手动触发
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run trending bot
+        env:
+          QYWX_WEBHOOK: ${{ secrets.QYWX_WEBHOOK }}
+        run: python main.py
