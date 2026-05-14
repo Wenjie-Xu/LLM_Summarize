@@ -6,12 +6,13 @@
 
 ```
 docs/
-├── README.md          # 本索引
-├── starrocks/         # uco-starrocks 项目文档
-├── dbt/               # dbt 相关项目文档
-├── trino/             # Trino 相关项目文档
-└── others/            # 其他项目文档
+├── README.md               # 本索引
+├── <repo-name>/           # 按来源 git 仓库名自动创建
+│   └── xxx.md
+└── ...
 ```
+
+**分类规则**：根据来源项目的 git 仓库名自动创建目录，目录不存在则自动创建。
 
 ## 归档记录
 

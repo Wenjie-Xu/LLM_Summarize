@@ -12,12 +12,18 @@
 
 ## 归档路径映射
 
-| 来源项目目录关键字 | 归档目标路径 |
-|-------------------|-------------|
-| `uco-starrocks` | `docs/starrocks/` |
-| `dbt` | `docs/dbt/` |
-| `trino` | `docs/trino/` |
-| 其他 | `docs/others/` |
+自动根据来源项目的 **git 仓库名** 创建对应目录，目录不存在则自动创建。
+
+| 来源项目示例 | 归档目标路径 |
+|-------------|-------------|
+| `/home/xuwenjie/Documents/uco-starrocks` → 仓库名 `uco-starrocks` | `docs/uco-starrocks/` |
+| `/home/xuwenjie/Documents/uco-dbt` → 仓库名 `uco-dbt` | `docs/uco-dbt/` |
+| `/home/xuwenjie/Documents/my-project` → 仓库名 `my-project` | `docs/my-project/` |
+
+**规则**：
+1. 读取当前工作目录的 git remote origin URL，提取仓库名作为分类名
+2. 目录不存在时自动 `mkdir -p docs/<repo-name>/`
+3. 同一项目的所有文档集中在一个目录下，不分散到 others
 
 ## 归档步骤
 
