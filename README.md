@@ -2,6 +2,16 @@
 
 每日自动推送 GitHub Trending Top 10 到企业微信。
 
+## 定时任务
+
+| 任务 | 执行周期 | Cron 表达式 |
+|------|---------|------------|
+| 推送 GitHub Trending | 每天北京时间 **09:00** | `0 1 * * *` |
+
+> UTC 01:00 = 北京时间 09:00（UTC+8）
+
+如需修改时间，编辑 `.github/workflows/daily-trending.yml` 中的 `cron` 表达式。
+
 ## 部署步骤
 
 ### 1. Push 代码到仓库
@@ -36,12 +46,6 @@ git push -u origin main
 进入 Actions 页面 → 选择 **Daily GitHub Trending** → 点击右侧 **Run workflow** → 再次点击 **Run workflow**。
 
 等待 1-2 分钟，查看企业微信群是否收到消息。
-
-### 5. 定时任务
-
-已配置每天北京时间 **09:00** 自动执行（UTC 01:00）。
-
-如需修改时间，编辑 `.github/workflows/daily-trending.yml` 中的 `cron` 表达式。
 
 ## 文件说明
 
