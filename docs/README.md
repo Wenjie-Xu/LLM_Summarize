@@ -19,3 +19,4 @@ docs/
 |------|----------|----------|-----------|
 | 2026-04-30 | uco-starrocks | starrocks-deployment-notes.md | `uco-starrocks-starrocks-deployment-notes.md` |
 | 2026-04-30 | uco-starrocks | uco-dw-access.md | `uco-starrocks-uco-dw-access.md` |
+| 2026-05-19 | uco-clickhouse-cluster | clickhouse-remote-function.md | `uco-clickhouse-cluster-clickhouse-remote-function.md` |
